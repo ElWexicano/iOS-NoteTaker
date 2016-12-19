@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var audioPlayer = AVAudioPlayer()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,4 +37,26 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
+    // A file that grabs any audio file path and creates the audio player
+    
+    func getAudioPlayerFile(file: String, type: String) -> AVAudioPlayer {
+        let path = Bundle.main.path(forResource: file as String, ofType: type as String)
+        let url = NSURL.fileURL(withPath: path!)
+        var audioPlayer:AVAudioPlayer?
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url)
+        } catch let audioPlayerError as NSError {
+            print("Failed to initialise audio player error: \(audioPlayerError.localizedDescription)")
+        }
+        
+        return audioPlayer!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        audioPlayer = getAudioPlayerFile(file: "beep1", type: "mp3")
+        audioPlayer.play()
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

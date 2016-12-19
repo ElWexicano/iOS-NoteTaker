@@ -15,6 +15,11 @@
 		3426FD901E081C93005CEAF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3426FD8E1E081C93005CEAF5 /* LaunchScreen.storyboard */; };
 		3426FD9B1E081C93005CEAF5 /* NoteTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FD9A1E081C93005CEAF5 /* NoteTakerTests.swift */; };
 		3426FDA61E081C93005CEAF5 /* NoteTakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FDA51E081C93005CEAF5 /* NoteTakerUITests.swift */; };
+		345F08C01E0881FD003496FF /* grey_wash_wall_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */; };
+		345F08C11E0881FD003496FF /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BD1E0881FD003496FF /* microphone.png */; };
+		345F08C21E0881FD003496FF /* microphoneDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BE1E0881FD003496FF /* microphoneDepressed.png */; };
+		345F08C31E0881FD003496FF /* shattered_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BF1E0881FD003496FF /* shattered_@2X.png */; };
+		34978EB41E08810E006D7659 /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34978EB31E08810E006D7659 /* beep1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		3426FDA11E081C93005CEAF5 /* NoteTakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3426FDA51E081C93005CEAF5 /* NoteTakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakerUITests.swift; sourceTree = "<group>"; };
 		3426FDA71E081C93005CEAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grey_wash_wall_@2X.png"; sourceTree = "<group>"; };
+		345F08BD1E0881FD003496FF /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
+		345F08BE1E0881FD003496FF /* microphoneDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphoneDepressed.png; sourceTree = "<group>"; };
+		345F08BF1E0881FD003496FF /* shattered_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shattered_@2X.png"; sourceTree = "<group>"; };
+		34978EB31E08810E006D7659 /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		3426FD811E081C93005CEAF5 /* NoteTaker */ = {
 			isa = PBXGroup;
 			children = (
+				34978EB51E0881A5006D7659 /* Assets */,
 				3426FD821E081C93005CEAF5 /* AppDelegate.swift */,
 				3426FD841E081C93005CEAF5 /* NoteTakerViewController.swift */,
 				3426FD861E081C93005CEAF5 /* Main.storyboard */,
@@ -126,6 +137,18 @@
 				3426FDA71E081C93005CEAF5 /* Info.plist */,
 			);
 			path = NoteTakerUITests;
+			sourceTree = "<group>";
+		};
+		34978EB51E0881A5006D7659 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */,
+				345F08BD1E0881FD003496FF /* microphone.png */,
+				345F08BE1E0881FD003496FF /* microphoneDepressed.png */,
+				345F08BF1E0881FD003496FF /* shattered_@2X.png */,
+				34978EB31E08810E006D7659 /* beep1.mp3 */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +258,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34978EB41E08810E006D7659 /* beep1.mp3 in Resources */,
+				345F08C31E0881FD003496FF /* shattered_@2X.png in Resources */,
 				3426FD901E081C93005CEAF5 /* LaunchScreen.storyboard in Resources */,
 				3426FD8D1E081C93005CEAF5 /* Assets.xcassets in Resources */,
+				345F08C11E0881FD003496FF /* microphone.png in Resources */,
 				3426FD881E081C93005CEAF5 /* Main.storyboard in Resources */,
+				345F08C21E0881FD003496FF /* microphoneDepressed.png in Resources */,
+				345F08C01E0881FD003496FF /* grey_wash_wall_@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +535,7 @@
 				3426FDAC1E081C93005CEAF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3426FDAD1E081C93005CEAF5 /* Build configuration list for PBXNativeTarget "NoteTakerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +544,7 @@
 				3426FDAF1E081C93005CEAF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3426FDB01E081C93005CEAF5 /* Build configuration list for PBXNativeTarget "NoteTakerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +553,7 @@
 				3426FDB21E081C93005CEAF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
