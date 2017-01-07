@@ -87,4 +87,29 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        switch editingStyle {
+        case .delete:
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            context.delete(notesArray[indexPath.row] as NSManagedObject)
+            notesArray.remove(at: indexPath.row)
+            
+            do {
+                try context.save()
+                
+            } catch let error as NSError {
+                print("Whit son, we've got an error: \(error.localizedDescription)")
+            }
+            
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        default:
+            return
+        }
+        
+    }
 }

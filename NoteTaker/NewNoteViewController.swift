@@ -56,15 +56,19 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context) as! Note
-        note.name = noteTitle.text!
-        note.url = audioURL
+        if (noteTitle.text != "") {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context) as! Note
         
-        do {
-            try context.save()
-        } catch let saveError as NSError {
-            print("Save error: \(saveError.localizedDescription)")
+            note.name = noteTitle.text!
+            note.url = audioURL
+        
+            do {
+                try context.save()
+            } catch let saveError as NSError {
+                print("Save error: \(saveError.localizedDescription)")
+            }
+            
         }
         
         self.dismiss(animated: true, completion: nil)
