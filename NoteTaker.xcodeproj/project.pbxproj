@@ -21,6 +21,7 @@
 		345F08C31E0881FD003496FF /* shattered_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BF1E0881FD003496FF /* shattered_@2X.png */; };
 		34978EB41E08810E006D7659 /* beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34978EB31E08810E006D7659 /* beep1.mp3 */; };
 		34A0B2531E2155CE004822CE /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0B2521E2155CE004822CE /* NewNoteViewController.swift */; };
+		34A0B2601E217523004822CE /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0B25E1E217523004822CE /* Note+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		345F08BF1E0881FD003496FF /* shattered_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shattered_@2X.png"; sourceTree = "<group>"; };
 		34978EB31E08810E006D7659 /* beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep1.mp3; sourceTree = "<group>"; };
 		34A0B2521E2155CE004822CE /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		34A0B25E1E217523004822CE /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		3426FD761E081C93005CEAF5 = {
 			isa = PBXGroup;
 			children = (
+				34A0B25E1E217523004822CE /* Note+CoreDataClass.swift */,
 				3426FD811E081C93005CEAF5 /* NoteTaker */,
 				3426FD991E081C93005CEAF5 /* NoteTakerTests */,
 				3426FDA41E081C93005CEAF5 /* NoteTakerUITests */,
@@ -295,6 +298,7 @@
 			files = (
 				3426FD8B1E081C93005CEAF5 /* NoteTaker.xcdatamodeld in Sources */,
 				34A0B2531E2155CE004822CE /* NewNoteViewController.swift in Sources */,
+				34A0B2601E217523004822CE /* Note+CoreDataClass.swift in Sources */,
 				3426FD851E081C93005CEAF5 /* NoteTakerViewController.swift in Sources */,
 				3426FD831E081C93005CEAF5 /* AppDelegate.swift in Sources */,
 			);

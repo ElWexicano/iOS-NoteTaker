@@ -11,6 +11,8 @@ import AVFoundation
 
 class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var notesArray: [Note] = []
+    
     var audioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +30,7 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return notesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
