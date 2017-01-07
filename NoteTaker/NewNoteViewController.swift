@@ -46,8 +46,12 @@ class NewNoteViewController: UIViewController {
     var audioRecorder : AVAudioRecorder!
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
+        
+        recordButton.layer.shadowOpacity = 1.0
+        recordButton.layer.shadowOffset = CGSize(width: 5.0, height: 4.0)
+        recordButton.layer.shadowRadius = 5.0
+        recordButton.layer.shadowColor = UIColor.black.cgColor
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -76,9 +80,13 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func record(_ sender: Any) {
         
+        recordButton.layer.shadowOpacity = 1.0
+        recordButton.layer.shadowOffset = CGSize(width: 5.0, height: 4.0)
+        recordButton.layer.shadowRadius = 5.0
+        recordButton.layer.shadowColor = UIColor.black.cgColor
+        
         if (audioRecorder.isRecording) {
             audioRecorder.stop()
-            recordButton.setTitle("Record", for: .normal)
         } else {
             let session = AVAudioSession.sharedInstance()
             
@@ -89,8 +97,18 @@ class NewNoteViewController: UIViewController {
                 print("Record error: \(recordError.localizedDescription)")
             }
             
-            recordButton.setTitle("Stop Recording", for: .normal)
         }
     }
+    
+    
+    @IBAction func touchDownRecord(_ sender: Any) {
+        recordButton.layer.shadowOpacity = 1.0
+        recordButton.layer.shadowOffset = CGSize(width: -2.0, height: -2.0)
+        recordButton.layer.shadowRadius = 1.0
+        recordButton.layer.shadowColor = UIColor.black.cgColor
+    }
+    
+    
+    
     
 }
