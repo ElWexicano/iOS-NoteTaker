@@ -39,8 +39,12 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBOutlet weak var noteTitle: UITextField!
-    
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var peakLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressView2: UIProgressView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var audioURL : String = ""
     var audioRecorder : AVAudioRecorder!
@@ -108,7 +112,25 @@ class NewNoteViewController: UIViewController {
         recordButton.layer.shadowColor = UIColor.black.cgColor
     }
     
-    
+    func updateAudioMeter(timer: Timer) {
+        if audioRecorder.isRecording {
+            
+            let dFormat = "%02d"
+            let min:Int = Int(audioRecorder.currentTime / 60)
+            let sec:Int = Int(audioRecorder.currentTime.truncatingRemainder(dividingBy: 60))
+            let timeString = "\(String(format: dFormat, min)):\(String(format: dFormat, sec))"
+            timeLabel.text = timeString
+            audioRecorder.updateMeters()
+            
+            // TODO: finish this off. Currently at 8:00 of the tutorial.
+            
+        } else {
+            progressView.setProgress(0.0, animated: true)
+            progressView2.setProgress(0.0, animated: true)
+            progressLabel.text = "0%"
+            peakLabel.text = "0%"
+        }
+    }
     
     
 }
