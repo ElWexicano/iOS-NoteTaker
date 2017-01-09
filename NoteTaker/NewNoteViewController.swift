@@ -104,7 +104,6 @@ class NewNoteViewController: UIViewController {
         }
     }
     
-    
     @IBAction func touchDownRecord(_ sender: Any) {
         recordButton.layer.shadowOpacity = 1.0
         recordButton.layer.shadowOffset = CGSize(width: -2.0, height: -2.0)
@@ -122,7 +121,15 @@ class NewNoteViewController: UIViewController {
             timeLabel.text = timeString
             audioRecorder.updateMeters()
             
-            // TODO: finish this off. Currently at 8:00 of the tutorial.
+            let averageAudio = audioRecorder.averagePower(forChannel: 0) * -1
+            let peakAudio = audioRecorder.peakPower(forChannel: 0) * -1
+            let progressViewAverage = Int(averageAudio)
+            let progressViewPeak = Int(peakAudio)
+            
+            progressLabel.text = "\(averageAudio)%"
+            peakLabel.text = "\(peakAudio)%"
+            
+            
             
         } else {
             progressView.setProgress(0.0, animated: true)
@@ -131,6 +138,7 @@ class NewNoteViewController: UIViewController {
             peakLabel.text = "0%"
         }
     }
+    
     
     
 }
