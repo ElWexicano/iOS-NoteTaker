@@ -48,6 +48,8 @@ class NewNoteViewController: UIViewController {
     
     var audioURL : String = ""
     var audioRecorder : AVAudioRecorder!
+    var timerInterval : TimeInterval = 0.5
+    var audioPlayer : AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,12 +86,18 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func record(_ sender: Any) {
         
+        let mic = UIImage(named: "microphoneDepressed.png") as UIImage!
+        recordButton.setImage(mic, for: .normal)
+        
         recordButton.layer.shadowOpacity = 1.0
         recordButton.layer.shadowOffset = CGSize(width: 5.0, height: 4.0)
         recordButton.layer.shadowRadius = 5.0
         recordButton.layer.shadowColor = UIColor.black.cgColor
         
         if (audioRecorder.isRecording) {
+            let mic = UIImage(named: "microphone.png") as UIImage!
+            recordButton.setImage(mic, for: .normal)
+            
             audioRecorder.stop()
         } else {
             let session = AVAudioSession.sharedInstance()
@@ -105,6 +113,14 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func touchDownRecord(_ sender: Any) {
+        
+        audioPlayer = getAudioPlayerFile(file: "beep1", type: "mp3")
+        audioPlayer.play()
+        
+        let timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(self.updateAudioMeter), userInfo: nil, repeats: true)
+        
+        timer.fire()
+        
         recordButton.layer.shadowOpacity = 1.0
         recordButton.layer.shadowOffset = CGSize(width: -2.0, height: -2.0)
         recordButton.layer.shadowRadius = 1.0
@@ -129,7 +145,7 @@ class NewNoteViewController: UIViewController {
             progressLabel.text = "\(averageAudio)%"
             peakLabel.text = "\(peakAudio)%"
             
-            
+            bar(progressBar1: progressViewAverage, progressBar2: progressViewPeak)
             
         } else {
             progressView.setProgress(0.0, animated: true)
@@ -139,6 +155,22 @@ class NewNoteViewController: UIViewController {
         }
     }
     
+    func bar(progressBar1: Int, progressBar2: Int) {
+        // TODO add in the updating of the progress bars. Seems like a lot of switching for my liking.
+    }
     
+    func getAudioPlayerFile(file: String, type: String) -> AVAudioPlayer {
+        let path = Bundle.main.path(forResource: file as String, ofType: type as String)
+        let url = NSURL.fileURL(withPath: path!)
+        var audioPlayer:AVAudioPlayer?
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url)
+        } catch let audioPlayerError as NSError {
+            print("Failed to initialise audio player error: \(audioPlayerError.localizedDescription)")
+        }
+        
+        return audioPlayer!
+    }
     
 }
