@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v1n-nd-ICJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,20 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Syq-z4-3Wg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headerbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-uV-Z5E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2Q-es-OVj">
+                                <rect key="frame" x="280" y="167" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <state key="normal" image="plusbtn.png"/>
+                                <connections>
+                                    <segue destination="Bt3-gF-3U1" kind="presentation" id="c0E-nj-gcs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YXm-u6-tt9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="33o-Ew-Amf">
-                            <connections>
-                                <segue destination="Bt3-gF-3U1" kind="presentation" id="84P-2r-QaC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="YXm-u6-tt9"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="Syq-z4-3Wg" id="E5x-AO-ZZs"/>
                     </connections>
@@ -170,6 +178,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="noteTitle" destination="Ikj-eF-doh" id="yZH-Ed-1BS"/>
                         <outlet property="peakLabel" destination="jq9-PX-pWQ" id="SSE-qA-1iv"/>
@@ -184,26 +193,12 @@
             </objects>
             <point key="canvasLocation" x="765.60000000000002" y="138.98050974512745"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kNx-o9-Jh7">
-            <objects>
-                <navigationController id="v1n-nd-ICJ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gMy-RE-TNB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fy6-J8-Xxw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2vR-ET-VX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1001" y="139"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="headerbg.png" width="750" height="400"/>
         <image name="microphone.png" width="300" height="300"/>
         <image name="microphoneDepressed.png" width="300" height="300"/>
+        <image name="plusbtn.png" width="126" height="126"/>
         <image name="shattered_.png" width="500" height="500"/>
     </resources>
 </document>

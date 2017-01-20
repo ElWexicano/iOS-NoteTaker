@@ -15,6 +15,20 @@
 		3426FD901E081C93005CEAF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3426FD8E1E081C93005CEAF5 /* LaunchScreen.storyboard */; };
 		3426FD9B1E081C93005CEAF5 /* NoteTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FD9A1E081C93005CEAF5 /* NoteTakerTests.swift */; };
 		3426FDA61E081C93005CEAF5 /* NoteTakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FDA51E081C93005CEAF5 /* NoteTakerUITests.swift */; };
+		3430FFB21E32C4D100FF94C1 /* average in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA41E32C4D000FF94C1 /* average */; };
+		3430FFB31E32C4D100FF94C1 /* checkicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA51E32C4D100FF94C1 /* checkicon.png */; };
+		3430FFB41E32C4D100FF94C1 /* clickedbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA61E32C4D100FF94C1 /* clickedbtn.png */; };
+		3430FFB51E32C4D100FF94C1 /* headerbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA71E32C4D100FF94C1 /* headerbg.png */; };
+		3430FFB61E32C4D100FF94C1 /* micblackicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA81E32C4D100FF94C1 /* micblackicon.png */; };
+		3430FFB71E32C4D100FF94C1 /* micpinkbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFA91E32C4D100FF94C1 /* micpinkbg.png */; };
+		3430FFB81E32C4D100FF94C1 /* micpinkbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAA1E32C4D100FF94C1 /* micpinkbtn.png */; };
+		3430FFB91E32C4D100FF94C1 /* micwhitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAB1E32C4D100FF94C1 /* micwhitebg.png */; };
+		3430FFBA1E32C4D100FF94C1 /* micwhiteicn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAC1E32C4D100FF94C1 /* micwhiteicn.png */; };
+		3430FFBB1E32C4D100FF94C1 /* mtnbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAD1E32C4D100FF94C1 /* mtnbg.png */; };
+		3430FFBC1E32C4D100FF94C1 /* peak in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAE1E32C4D100FF94C1 /* peak */; };
+		3430FFBD1E32C4D100FF94C1 /* plusbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFAF1E32C4D100FF94C1 /* plusbg.png */; };
+		3430FFBE1E32C4D100FF94C1 /* plusbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFB01E32C4D100FF94C1 /* plusbtn.png */; };
+		3430FFBF1E32C4D100FF94C1 /* plusicn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430FFB11E32C4D100FF94C1 /* plusicn.png */; };
 		345F08C01E0881FD003496FF /* grey_wash_wall_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */; };
 		345F08C11E0881FD003496FF /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BD1E0881FD003496FF /* microphone.png */; };
 		345F08C21E0881FD003496FF /* microphoneDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 345F08BE1E0881FD003496FF /* microphoneDepressed.png */; };
@@ -56,6 +70,20 @@
 		3426FDA11E081C93005CEAF5 /* NoteTakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3426FDA51E081C93005CEAF5 /* NoteTakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakerUITests.swift; sourceTree = "<group>"; };
 		3426FDA71E081C93005CEAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3430FFA41E32C4D000FF94C1 /* average */ = {isa = PBXFileReference; lastKnownFileType = folder; path = average; sourceTree = "<group>"; };
+		3430FFA51E32C4D100FF94C1 /* checkicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkicon.png; sourceTree = "<group>"; };
+		3430FFA61E32C4D100FF94C1 /* clickedbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickedbtn.png; sourceTree = "<group>"; };
+		3430FFA71E32C4D100FF94C1 /* headerbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerbg.png; sourceTree = "<group>"; };
+		3430FFA81E32C4D100FF94C1 /* micblackicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micblackicon.png; sourceTree = "<group>"; };
+		3430FFA91E32C4D100FF94C1 /* micpinkbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micpinkbg.png; sourceTree = "<group>"; };
+		3430FFAA1E32C4D100FF94C1 /* micpinkbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micpinkbtn.png; sourceTree = "<group>"; };
+		3430FFAB1E32C4D100FF94C1 /* micwhitebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micwhitebg.png; sourceTree = "<group>"; };
+		3430FFAC1E32C4D100FF94C1 /* micwhiteicn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micwhiteicn.png; sourceTree = "<group>"; };
+		3430FFAD1E32C4D100FF94C1 /* mtnbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mtnbg.png; sourceTree = "<group>"; };
+		3430FFAE1E32C4D100FF94C1 /* peak */ = {isa = PBXFileReference; lastKnownFileType = folder; path = peak; sourceTree = "<group>"; };
+		3430FFAF1E32C4D100FF94C1 /* plusbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusbg.png; sourceTree = "<group>"; };
+		3430FFB01E32C4D100FF94C1 /* plusbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusbtn.png; sourceTree = "<group>"; };
+		3430FFB11E32C4D100FF94C1 /* plusicn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusicn.png; sourceTree = "<group>"; };
 		345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grey_wash_wall_@2X.png"; sourceTree = "<group>"; };
 		345F08BD1E0881FD003496FF /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
 		345F08BE1E0881FD003496FF /* microphoneDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphoneDepressed.png; sourceTree = "<group>"; };
@@ -148,6 +176,20 @@
 		34978EB51E0881A5006D7659 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3430FFA41E32C4D000FF94C1 /* average */,
+				3430FFA51E32C4D100FF94C1 /* checkicon.png */,
+				3430FFA61E32C4D100FF94C1 /* clickedbtn.png */,
+				3430FFA71E32C4D100FF94C1 /* headerbg.png */,
+				3430FFA81E32C4D100FF94C1 /* micblackicon.png */,
+				3430FFA91E32C4D100FF94C1 /* micpinkbg.png */,
+				3430FFAA1E32C4D100FF94C1 /* micpinkbtn.png */,
+				3430FFAB1E32C4D100FF94C1 /* micwhitebg.png */,
+				3430FFAC1E32C4D100FF94C1 /* micwhiteicn.png */,
+				3430FFAD1E32C4D100FF94C1 /* mtnbg.png */,
+				3430FFAE1E32C4D100FF94C1 /* peak */,
+				3430FFAF1E32C4D100FF94C1 /* plusbg.png */,
+				3430FFB01E32C4D100FF94C1 /* plusbtn.png */,
+				3430FFB11E32C4D100FF94C1 /* plusicn.png */,
 				345F08BC1E0881FD003496FF /* grey_wash_wall_@2X.png */,
 				345F08BD1E0881FD003496FF /* microphone.png */,
 				345F08BE1E0881FD003496FF /* microphoneDepressed.png */,
@@ -264,12 +306,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3430FFBC1E32C4D100FF94C1 /* peak in Resources */,
 				34978EB41E08810E006D7659 /* beep1.mp3 in Resources */,
 				345F08C31E0881FD003496FF /* shattered_@2X.png in Resources */,
+				3430FFBB1E32C4D100FF94C1 /* mtnbg.png in Resources */,
+				3430FFBE1E32C4D100FF94C1 /* plusbtn.png in Resources */,
+				3430FFBA1E32C4D100FF94C1 /* micwhiteicn.png in Resources */,
 				3426FD901E081C93005CEAF5 /* LaunchScreen.storyboard in Resources */,
+				3430FFB41E32C4D100FF94C1 /* clickedbtn.png in Resources */,
+				3430FFB91E32C4D100FF94C1 /* micwhitebg.png in Resources */,
+				3430FFB21E32C4D100FF94C1 /* average in Resources */,
 				3426FD8D1E081C93005CEAF5 /* Assets.xcassets in Resources */,
+				3430FFBD1E32C4D100FF94C1 /* plusbg.png in Resources */,
 				345F08C11E0881FD003496FF /* microphone.png in Resources */,
 				3426FD881E081C93005CEAF5 /* Main.storyboard in Resources */,
+				3430FFBF1E32C4D100FF94C1 /* plusicn.png in Resources */,
+				3430FFB31E32C4D100FF94C1 /* checkicon.png in Resources */,
+				3430FFB51E32C4D100FF94C1 /* headerbg.png in Resources */,
+				3430FFB71E32C4D100FF94C1 /* micpinkbg.png in Resources */,
+				3430FFB61E32C4D100FF94C1 /* micblackicon.png in Resources */,
+				3430FFB81E32C4D100FF94C1 /* micpinkbtn.png in Resources */,
 				345F08C21E0881FD003496FF /* microphoneDepressed.png in Resources */,
 				345F08C01E0881FD003496FF /* grey_wash_wall_@2X.png in Resources */,
 			);

@@ -21,6 +21,8 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = 57
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
