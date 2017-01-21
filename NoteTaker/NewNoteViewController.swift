@@ -42,9 +42,14 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var peakLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var progressView2: UIProgressView!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var peakImageView: UIImageView!
+    
+    @IBOutlet weak var averageImageView: UIImageView!
+    
+    
+    
     
     var audioURL : String = ""
     var audioRecorder : AVAudioRecorder!
@@ -53,11 +58,12 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        recordButton.layer.shadowOpacity = 1.0
-        recordButton.layer.shadowOffset = CGSize(width: 5.0, height: 4.0)
-        recordButton.layer.shadowRadius = 5.0
-        recordButton.layer.shadowColor = UIColor.black.cgColor
+
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: noteTitle.frame.height - 1, width: noteTitle.frame.width, height: 1.0)
+        bottomLine.backgroundColor = UIColor.white.cgColor
+        noteTitle.borderStyle = UITextBorderStyle.none
+        noteTitle.layer.addSublayer(bottomLine)        
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -86,16 +92,11 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func record(_ sender: Any) {
         
-        let mic = UIImage(named: "microphoneDepressed.png") as UIImage!
+        let mic = UIImage(named: "micbtnwhite.png") as UIImage!
         recordButton.setImage(mic, for: .normal)
         
-        recordButton.layer.shadowOpacity = 1.0
-        recordButton.layer.shadowOffset = CGSize(width: 5.0, height: 4.0)
-        recordButton.layer.shadowRadius = 5.0
-        recordButton.layer.shadowColor = UIColor.black.cgColor
-        
         if (audioRecorder.isRecording) {
-            let mic = UIImage(named: "microphone.png") as UIImage!
+            let mic = UIImage(named: "micpinkbtn.png") as UIImage!
             recordButton.setImage(mic, for: .normal)
             
             audioRecorder.stop()
@@ -120,11 +121,6 @@ class NewNoteViewController: UIViewController {
         let timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(self.updateAudioMeter), userInfo: nil, repeats: true)
         
         timer.fire()
-        
-        recordButton.layer.shadowOpacity = 1.0
-        recordButton.layer.shadowOffset = CGSize(width: -2.0, height: -2.0)
-        recordButton.layer.shadowRadius = 1.0
-        recordButton.layer.shadowColor = UIColor.black.cgColor
     }
     
     func updateAudioMeter(timer: Timer) {
@@ -142,22 +138,50 @@ class NewNoteViewController: UIViewController {
             let progressViewAverage = Int(averageAudio)
             let progressViewPeak = Int(peakAudio)
             
-            progressLabel.text = "\(averageAudio)%"
-            peakLabel.text = "\(peakAudio)%"
+            progressLabel.text = "\(progressViewAverage)%"
+            peakLabel.text = "\(progressViewPeak)%"
             
-            bar(progressBar1: progressViewAverage, progressBar2: progressViewPeak)
+            averageRadial(average: progressViewAverage, peak: progressViewPeak)
             
         } else {
-            progressView.setProgress(0.0, animated: true)
-            progressView2.setProgress(0.0, animated: true)
+            averageImageView.image = UIImage(named: "peak/peak0suffix.png")
+            peakImageView.image = UIImage(named: "peak/peak0suffix.png")
             progressLabel.text = "0%"
             peakLabel.text = "0%"
+            crossfadeTransition()
         }
     }
     
-    func bar(progressBar1: Int, progressBar2: Int) {
-        // TODO add in the updating of the progress bars. Seems like a lot of switching for my liking.
+    func averageRadial(average: Int, peak: Int) {
+        
+        switch average {
+        case average:
+            averageImageView.image = UIImage(named: "average/average\(String(average))suffix.png")
+            crossfadeTransition()
+        default:
+            averageImageView.image = UIImage(named: "peak/peak0suffix.png")
+            crossfadeTransition()
+        }
+        
+        switch peak {
+        case peak:
+            peakImageView.image = UIImage(named: "peak/peak\(String(average))suffix.png")
+            crossfadeTransition()
+        default:
+            peakImageView.image = UIImage(named: "peak/peak0suffix.png")
+            crossfadeTransition()
+        }
+        
     }
+    
+    func crossfadeTransition() {
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 0.2
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        view.layer.add(transition, forKey: nil)
+    }
+    
     
     func getAudioPlayerFile(file: String, type: String) -> AVAudioPlayer {
         let path = Bundle.main.path(forResource: file as String, ofType: type as String)

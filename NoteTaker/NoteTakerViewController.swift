@@ -51,6 +51,12 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
         let sound = notesArray[indexPath.row]
         let cell = UITableViewCell()
         cell.textLabel!.text = sound.name
+        
+        let font = UIFont(name: "Avenir-Book", size: 16)
+        let color = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.4)
+        cell.textLabel?.font = font
+        cell.textLabel?.textColor = color
+        
         return cell
     }
     
@@ -88,6 +94,18 @@ class NoteTakerViewController: UIViewController, UITableViewDelegate, UITableVie
         self.audioPlayer.play()
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        let section = indexPath.section
+        let numberOfRows = tableView.numberOfRows(inSection: section)
+        
+        for row in 0..<numberOfRows {
+            if let cell = tableView.cellForRow(at: NSIndexPath(row: row, section: section) as IndexPath) {
+                let image : UIImage = UIImage(named: "checkmark")!
+                cell.imageView!.image = image
+            }
+        }
+        
     }
     
     
